@@ -1,0 +1,48 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #1e1e1e;
+  color: white;
+  font-size: 16px; /* Slightly larger font size */
+}
+
+.container {
+  text-align: center;
+  font-size: 1.1em; /* Slightly larger text in the container */
+}
+
+table {
+  margin: 20px auto;
+  border-collapse: collapse;
+  font-size: 1.1em; /* Slightly larger font size for table */
+}
+
+th, td {
+  padding: 12px; /* Increased padding for cells */
+}
+
+button {
+  margin: 12px; /* Increased margin for buttons */
+  padding: 12px; /* Increased padding for buttons */
+  font-size: 1.1em; /* Slightly larger text in buttons */
+  background-color: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #333;
+}
+
+input[type="time"] {
+  font-size: 1.1em; /* Slightly larger text for time inputs */
+}
+
+input[type="date"] {
+  font-size: 1.1em; /* Slightly larger text for date inputs */
+}
