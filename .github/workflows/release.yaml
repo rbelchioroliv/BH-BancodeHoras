@@ -1,0 +1,24 @@
+name: Release actions
+run-name: Releasing application
+
+on:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: deploying on server with ssh
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+            cd /web/bancodehoras
+            git pull
+            PORT=19022 ./scripts/run/start.sh 1.22
