@@ -26,7 +26,7 @@ body {
   box-sizing: border-box;
   font-size: 16px;
   border-radius: 8px;
-  background-color: #333;
+  background-color: #141414;
   color: white;
 }
 
@@ -44,7 +44,7 @@ th, td {
   margin: 12px; 
   padding: 12px; 
   font-size: 1.1em; 
-  background-color: #141414;
+  background-color: #141414b6;
   color: white;
   border: none;
   cursor: pointer;
@@ -63,12 +63,12 @@ input{
 input[type="time"] {
   font-size: 1.1em; 
   border-radius: 9px;
-  background-color: #333
+  background-color: #141414;
 }
 
 input[type="date"] {
   font-size: 1.1em; 
   border-radius: 9px;
-  background-color: #333
+  background-color: #141414;
   
 }
