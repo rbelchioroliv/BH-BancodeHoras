@@ -91,7 +91,7 @@ function App() {
 
       
 
-      <button onClick={handleAddRow}>Adicionar Linha</button>
+      <button id='button' onClick={handleAddRow}>Adicionar Linha</button>
       
       <div className="employee-input">
         <input
@@ -144,7 +144,7 @@ function App() {
           ))}
         </tbody>
       </table>
-      <button onClick={handleExport}>Exportar para Excel</button>
+      <button id='button' onClick={handleExport}>Exportar para Excel</button>
     </div>
   );
 }

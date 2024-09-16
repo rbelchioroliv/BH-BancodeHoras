@@ -26,6 +26,8 @@ body {
   box-sizing: border-box;
   font-size: 16px;
   border-radius: 8px;
+  background-color: #333;
+  color: white;
 }
 
 table {
@@ -38,26 +40,35 @@ th, td {
   padding: 12px; 
 }
 
-button {
+#button {
   margin: 12px; 
   padding: 12px; 
   font-size: 1.1em; 
-  background-color: black;
+  background-color: #141414;
   color: white;
   border: none;
   cursor: pointer;
+  transition: 0.7s;
 }
 
-button:hover {
+#button:hover {
   background-color: #333;
+  color: white;
+}
+
+input{
+  color: white;
 }
 
 input[type="time"] {
   font-size: 1.1em; 
   border-radius: 9px;
+  background-color: #333
 }
 
 input[type="date"] {
   font-size: 1.1em; 
   border-radius: 9px;
+  background-color: #333
+  
 }
