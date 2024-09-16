@@ -7,28 +7,41 @@ body {
   height: 100vh;
   background-color: #1e1e1e;
   color: white;
-  font-size: 16px; /* Slightly larger font size */
+  font-size: 16px; 
 }
 
 .container {
   text-align: center;
-  font-size: 1.1em; /* Slightly larger text in the container */
+  font-size: 1.1em; 
+}
+
+.employee-input {
+  margin-bottom: 10px;
+
+}
+
+.employee-input input {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  font-size: 16px;
+  border-radius: 8px;
 }
 
 table {
   margin: 20px auto;
   border-collapse: collapse;
-  font-size: 1.1em; /* Slightly larger font size for table */
+  font-size: 1.1em; 
 }
 
 th, td {
-  padding: 12px; /* Increased padding for cells */
+  padding: 12px; 
 }
 
 button {
-  margin: 12px; /* Increased margin for buttons */
-  padding: 12px; /* Increased padding for buttons */
-  font-size: 1.1em; /* Slightly larger text in buttons */
+  margin: 12px; 
+  padding: 12px; 
+  font-size: 1.1em; 
   background-color: black;
   color: white;
   border: none;
@@ -40,9 +53,11 @@ button:hover {
 }
 
 input[type="time"] {
-  font-size: 1.1em; /* Slightly larger text for time inputs */
+  font-size: 1.1em; 
+  border-radius: 9px;
 }
 
 input[type="date"] {
-  font-size: 1.1em; /* Slightly larger text for date inputs */
+  font-size: 1.1em; 
+  border-radius: 9px;
 }

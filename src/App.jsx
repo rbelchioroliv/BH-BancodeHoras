@@ -8,15 +8,16 @@ function App() {
   const [rows, setRows] = useState([
     { data: '', credito: '00:00:00', debito: '00:00:00', subtotal: 0, total: 0 }
   ]);
+  const [employeeName, setEmployeeName] = useState(''); 
 
-  // Função para converter hh:mm:ss para decimal
+
   const timeToDecimal = (time) => {
     const [hours, minutes, seconds] = time.split(':').map(Number);
     const decimal = hours + minutes / 60 + seconds / 3600;
     return decimal || 0;
   };
 
-  // Função para converter decimal para hh:mm:ss
+
   const decimalToTime = (decimal) => {
     const hours = Math.floor(decimal);
     const minutes = Math.floor((decimal - hours) * 60);
@@ -33,7 +34,7 @@ function App() {
     const newRows = [...rows];
     const row = { ...newRows[index] };
 
-    // Se o campo for crédito ou débito, converte para decimal
+
     if (field === 'credito' || field === 'debito') {
       row[field] = value || '00:00:00';
       row.subtotal = timeToDecimal(row.credito) - timeToDecimal(row.debito);
@@ -50,15 +51,25 @@ function App() {
     const workbook = new ExcelJS.Workbook();
     const worksheet = workbook.addWorksheet('Banco de Horas');
 
-    // Add header row with styles
-    worksheet.addRow(['Data', 'Crédito (hh:mm:ss)', 'Débito (hh:mm:ss)', 'Subtotal', 'Total']);
-    worksheet.getCell('A1').style = { font: { bold: true }, fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFF00' } } };
-    worksheet.getCell('B1').style = { font: { bold: true }, fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFF00' } } };
-    worksheet.getCell('C1').style = { font: { bold: true }, fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFF00' } } };
-    worksheet.getCell('D1').style = { font: { bold: true }, fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFF00' } } };
-    worksheet.getCell('E1').style = { font: { bold: true }, fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: 'FFFF00' } } };
+    
+    worksheet.mergeCells('A1:E1');
+    worksheet.getCell('A1').value = `${employeeName}`;
+    worksheet.getCell('A1').style = {
+      font: { bold: true },
+      alignment: { horizontal: 'center' },
+      fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: 'D3D3D3' } }
+    };
 
-    // Add data rows
+   
+    worksheet.addRow(['Data', 'Crédito (hh:mm:ss)', 'Débito (hh:mm:ss)', 'Subtotal', 'Total']);
+    ['A', 'B', 'C', 'D', 'E'].forEach((col, i) => {
+      worksheet.getCell(`${col}2`).style = {
+        font: { bold: true },
+        fill: { type: 'pattern', pattern: 'solid', fgColor: { argb: 'A9A9A9' } }
+      };
+    });
+
+
     rows.forEach(row => {
       worksheet.addRow([
         row.data,
@@ -69,7 +80,7 @@ function App() {
       ]);
     });
 
-    // Save to file
+
     const buffer = await workbook.xlsx.writeBuffer();
     saveAs(new Blob([buffer]), 'banco_de_horas.xlsx');
   };
@@ -77,7 +88,20 @@ function App() {
   return (
     <div className="container">
       <h1>Cálculo de Banco de Horas</h1>
+
+      
+
       <button onClick={handleAddRow}>Adicionar Linha</button>
+      
+      <div className="employee-input">
+        <input
+          type="text"
+          value={employeeName}
+          onChange={(e) => setEmployeeName(e.target.value)}
+          placeholder="Nome do Funcionário"
+        />
+      </div>
+
       <table border="1">
         <thead>
           <tr>
