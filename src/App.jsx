@@ -87,7 +87,7 @@ function App() {
 
   return (
     <div className="container">
-      <h1>Cálculo de Banco de Horas</h1>
+      <h1 className="fixed-header">Cálculo de Banco de Horas</h1>
 
       
 
