@@ -4,7 +4,7 @@ run-name: Releasing application
 on:
   push:
     branches:
-      - "master"
+      - "main"
 
 jobs:
   deploy:
