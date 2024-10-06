@@ -1,10 +1,34 @@
-# Made with React + Vite
+# ⏱️Calculo Banco de Horas
+### Made with React + Vite
 
-> for start: yarn dev
+## 💻 Pré-requisitos
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
-Currently, two official plugins are available:
+- Você instalou a versão mais recente de `<yarn / node.js>`
+- Qualquer SO
+- Qualquer terminal
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Instalando Calculo de Banco de Horas
+
+Intale o node.js:
+
+https://nodejs.org/pt
+
+Clone esse repositório:
+```
+git clone https://github.com/rbelchioroliv/BH-BancodeHoras.git
+```
+
+Instale Yarn:
+
+```
+npm install --global yarn
+```
+
+Deploy local:
+```
+yarn dev
+```
+
+
